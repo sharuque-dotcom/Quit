@@ -1,0 +1,17 @@
+{
+  "name": "Quit — smoke-free companion",
+  "short_name": "Quit",
+  "description": "A compassionate companion for quitting smoking: ride out cravings, track your recovery, and learn your triggers.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6faf9",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
