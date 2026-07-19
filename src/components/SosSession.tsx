@@ -9,7 +9,8 @@ interface Props {
 
 type Phase = 'intro' | 'breathe' | 'log';
 
-const SESSION_SECONDS = 180;
+const SESSION_SECONDS = 300;
+// Paced like the drag rhythm of a cigarette: slow pull, brief hold, long exhale.
 const INHALE_S = 4;
 const HOLD_S = 2;
 const EXHALE_S = 6;
@@ -38,14 +39,17 @@ export default function SosSession({ onFinish }: Props) {
   if (phase === 'intro') {
     return (
       <div className="sos">
-        <h1>This craving will pass.</h1>
+        <h1>Take your break.</h1>
         <p>
-          A craving is a wave — it rises, peaks, and fades in about 3–5 minutes, whether or not you
-          smoke. You only need to outlast this one wave, not the whole ocean.
+          You've earned a pause — you just don't need the cigarette to have it. Step away from
+          whatever you're doing, like you always did.
         </p>
-        <p>Let's breathe through it together for three minutes.</p>
+        <p>
+          The craving itself is a wave: it rises, peaks, and fades in a few minutes whether or not
+          you smoke. This break lasts five minutes — the wave won't outlast it.
+        </p>
         <button className="btn-primary" onClick={() => setPhase('breathe')}>
-          Start breathing
+          Start my break
         </button>
         <button className="btn-ghost" onClick={() => setPhase('log')}>
           Skip to logging
@@ -73,7 +77,7 @@ export default function SosSession({ onFinish }: Props) {
         <p className="sos-countdown">
           {minutes}:{seconds}
         </p>
-        <p className="sos-hint">Ride the wave. It's already fading.</p>
+        <p className="sos-hint">Slow pull in, long breath out — same rhythm, nothing burning.</p>
         <button className="btn-ghost" onClick={() => setPhase('log')}>
           I'm okay now
         </button>
@@ -121,8 +125,9 @@ function LogForm({ startedAt, onFinish }: { startedAt: string; onFinish: Props['
 
       {outcome === 'slipped' && (
         <p className="slip-note">
-          A slip is a data point, not a verdict. Most successful quitters slip along the way — what
-          matters is the next craving, and you'll be readier for it.
+          A slip is a data point, not a verdict. You're still a non-smoker who had a hard moment —
+          most people who quit for good slipped along the way, and what matters is the next
+          craving. You'll be readier for it.
         </p>
       )}
 

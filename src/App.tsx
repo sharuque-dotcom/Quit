@@ -58,7 +58,7 @@ export default function App() {
       </main>
 
       <button className="sos-fab" onClick={() => setSosOpen(true)}>
-        Craving? Tap here
+        Craving? Take a break
       </button>
 
       <nav className="tabbar">
